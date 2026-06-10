@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="bpaas-design-system" content="editorial-apple">
+    <meta name="bpaas-design-theme" content="kr-mono-chrome">
+    <title>합정 펍 가격비교 | 합정역 펍 추천 & 정보</title>
+    <meta name="description" content="합정역 근처 펍 가격비교 완벽 정리! 분위기 좋은 합정 펍 3곳의 맥주 가격, 음식 가격, 분위기를 브로(bro)스타일로 비교해드립니다. 오늘 저녁, 합정에서 한잔 어때?">
+    <meta name="keywords" content="합정 펍, 합정 펍 가격비교, 합정역 펍, 합정 맥주, 합정 술집, 합정 브루펍, 합정 가성비 펍">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://kr-pbn-sr-007.vercel.app/">
+    <meta property="og:title" content="합정 펍 가격비교 | 합정역 펍 추천 & 정보">
+    <meta property="og:description" content="합정역 근처 펍 가격비교 완벽 정리! 분위기 좋은 합정 펍 3곳의 맥주 가격, 음식 가격, 분위기를 브로(bro)스타일로 비교해드립니다. 오늘 저녁, 합정에서 한잔 어때?">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://kr-pbn-sr-007.vercel.app/">
+    <meta property="og:image" content="https://kr-pbn-sr-007.vercel.app/og-image.jpg">
+    <style>
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        html {
+            font-size: 16px;
+            scroll-behavior: smooth;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: #f5f5f7;
+            color: #1d1d1f;
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        header {
+            background: #ffffff;
+            border-bottom: 1px solid #d2d2d7;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+        }
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 16px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            color: #1d1d1f;
+            text-decoration: none;
+        }
+        .logo span {
+            color: #86868b;
+        }
+        .nav-links {
+            display: flex;
+            gap: 32px;
+            list-style: none;
+        }
+        .nav-links a {
+            text-decoration: none;
+            color: #1d1d1f;
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: color 0.2s ease;
+        }
+        .nav-links a:hover {
+            color: #0066cc;
+        }
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 6px;
+            padding: 4px;
+        }
+        .hamburger span {
+            display: block;
+            width: 28px;
+            height: 2px;
+            background: #1d1d1f;
+            border-radius: 2px;
+            transition: all 0.3s ease;
+        }
+        .mobile-menu {
+            display: none;
+            position: fixed;
+            top: 60px;
+            left: 0;
+            width: 100%;
+            background: #ffffff;
+            padding: 20px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.08);
+            z-index: 999;
+        }
+        .mobile-menu a {
+            display: block;
+            padding: 12px 0;
+            text-decoration: none;
+            color: #1d1d1f;
+            font-size: 1.1rem;
+            border-bottom: 1px solid #e8e8ed;
+        }
+        .mobile-menu a:last-child {
+            border-bottom: none;
+        }
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            .hamburger {
+                display: flex;
+            }
+            .mobile-menu.active {
+                display: block;
+            }
+        }
+        .hero {
+            text-align: center;
+            padding: 80px 20px 60px;
+            background: linear-gradient(180deg, #ffffff 0%, #f5f5f7 100%);
+        }
+        .hero h1 {
+            font-size: 2.8rem;
+            font-weight: 700;
+            letter-spacing: -1px;
+            margin-bottom: 16px;
+            color: #1d1d1f;
+        }
+        .hero p {
+            font-size: 1.2rem;
+            color: #86868b;
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.5;
+        }
+        .content-section {
+            padding: 60px 0;
+        }
+        .content-section h2 {
+            font-size: 2rem;
+            font-weight: 600;
+            margin-bottom: 32px;
+            color: #1d1d1f;
+            letter-spacing: -0.5px;
+        }
+        .content-section h3 {
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin-bottom: 16px;
+            color: #1d1d1f;
+        }
+        .content-section p {
+            font-size: 1.05rem;
+            color: #515154;
+            margin-bottom: 24px;
+            line-height: 1.7;
+        }
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px;
+            margin: 40px 0;
+        }
+        .card {
+            background: #ffffff;
+            border-radius: 16px;
+            padding: 32px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+            border: 1px solid #e8e8ed;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 24px rgba(0,0,0,0.08);
+        }
+        .card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 12px;
+        }
+        .card .price {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #1d1d1f;
+            margin-bottom: 8px;
+        }
+        .card .price span {
+            font-size: 1rem;
+            font-weight: 400;
+            color: #86868b;
+        }
+        .card .detail {
+            color: #86868b;
+            font-size: 0.95rem;
+            margin-bottom: 4px;
+        }
+        .card .badge {
+            display: inline-block;
+            background: #f0f0f0;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            color: #515154;
+            margin-top: 12px;
+        }
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 40px 0;
+            background: #ffffff;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+        }
+        .comparison-table th {
+            background: #f5f5f7;
+            padding: 16px 20px;
+            text-align: left;
+            font-weight: 600;
+            color: #1d1d1f;
+            border-bottom: 2px solid #d2d2d7;
+        }
+        .comparison-table td {
+            padding: 16px 20px;
+            border-bottom: 1px solid #e8e8ed;
+            color: #515154;
+        }
+        .comparison-table tr:last-child td {
+            border-bottom: none;
+        }
+        .comparison-table .highlight {
+            background: #f0f7ff;
+        }
+        .faq-section {
+            margin: 60px 0;
+        }
+        .faq-item {
+            background: #ffffff;
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 16px;
+            border: 1px solid #e8e8ed;
+            cursor: pointer;
+            transition: box-shadow 0.2s ease;
+        }
+        .faq-item:hover {
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+        }
+        .faq-item h4 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #1d1d1f;
+            margin-bottom: 8px;
+        }
+        .faq-item p {
+            color: #515154;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+        .cta-box {
+            background: #1d1d1f;
+            color: #ffffff;
+            border-radius: 20px;
+            padding: 48px;
+            text-align: center;
+            margin: 60px 0;
+        }
+        .cta-box h2 {
+            color: #ffffff;
+            font-size: 2rem;
+            margin-bottom: 16px;
+        }
+        .cta-box p {
+            color: #a1a1a6;
+            font-size: 1.1rem;
+            margin-bottom: 24px;
+        }
+        .cta-box .btn {
+            display: inline-block;
+            background: #ffffff;
+            color: #1d1d1f;
+            padding: 14px 40px;
+            border-radius: 40px;
+            font-weight: 600;
+            font-size: 1rem;
+            text-decoration: none;
+            transition: transform 0.2s ease;
+        }
+        .cta-box .btn:hover {
+            transform: scale(1.02);
+        }
+        footer {
+            background: #1d1d1f;
+            color: #86868b;
+            padding: 40px 20px;
+            text-align: center;
+        }
+        footer p {
+            font-size: 0.9rem;
+            margin-bottom: 8px;
+        }
+        footer a {
+            color: #86868b;
+            text-decoration: none;
+        }
+        footer a:hover {
+            color: #ffffff;
+        }
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            .hero p {
+                font-size: 1rem;
+            }
+            .content-section h2 {
+                font-size: 1.6rem;
+            }
+            .card-grid {
+                grid-template-columns: 1fr;
+            }
+            .comparison-table {
+                font-size: 0.9rem;
+            }
+            .cta-box {
+                padding: 32px 20px;
+            }
+            .cta-box h2 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="/" class="logo">합정<span>펍</span></a>
+            <ul class="nav-links">
+                <li><a href="/">홈</a></li>
+                <li><a href="/blog">블로그</a></li>
+                <li><a href="/about">소개</a></li>
+                <li><a href="/contact">문의</a></li>
+            </ul>
+            <div class="hamburger" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+        <div class="mobile-menu" id="mobileMenu">
+            <a href="/">홈</a>
+            <a href="/blog">블로그</a>
+            <a href="/about">소개</a>
+            <a href="/contact">문의</a>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>합정 펍 가격비교, 형아가 다 정리했어</h1>
+            <p>합정역 근처에서 진짜 가성비 좋은 펍 찾고 있다면? 내가 직접 세 군데 돌아다니며 맥주랑 안주 가격 다 까발렸다. 오늘 저녁, 같이 한잔할 사람?</p>
+        </div>
+    </section>
+
+    <section class="content-section">
+        <div class="container">
+            <h2>왜 합정 펍 가격비교가 필요할까?</h2>
+            <p>야, 합정역 주변에 펍이 얼마나 많은 줄 알아? 골목골목마다 분위기 좋은 술집이 넘쳐나는데, 문제는 가격이 천차만별이라는 거야. 어떤 데는 생맥주 500ml에 8,000원 받고, 어떤 데는 5,000원에 팔아. 근데 맛이랑 분위기는 또 다르고... 그래서 내가 직접 발로 뛰었다. 합정 펍 가격비교, 형아가 확실하게 해줄게. 이거 보고 오늘 저녁 계획 세우면 돈 아끼고 기분 좋게 끝낼 수 있을 거야.</p>
+            <p>물론 가격만 보면 재미없지. 분위기랑 서비스, 그리고 맥주의 퀄리티까지 고려해야 진짜 가성비를 따질 수 있어. 내가 소개할 세 군데 펍은 각각 매력이 확실하니까, 취향에 맞게 골라보라구. 자, 그럼 본격적으로 합정 펍 가격비교 들어간다!</p>
+
+            <div class="card-grid">
+                <div class="card">
+                    <h3>🍺 브루잉팩토리 합정</h3>
+                    <div class="price">5,500<span>원 / 500ml</span></div>
+                    <p class="detail">생맥주 가격: 5,500원 (500ml)</p>
+                    <p class="detail">대표 안주: 치킨 플래터 18,000원</p>
+                    <p class="detail">분위기: 인더스트리얼 감성, 넓은 홀</p>
+                    <span class="badge">가성비 최고</span>
+                </div>
+                <div class="card">
+                    <h3>🍻 더 펍 합정</h3>
+                    <div class="price">7,000<span>원 / 500ml</span></div>
+                    <p class="detail">생맥주 가격: 7,000원 (500ml)</p>
+                    <p class="detail">대표 안주: 피자 22,000원</p>
+                    <p class="detail">분위기: 클래식한 영국식 펍 인테리어</p>
+                    <span class="badge">분위기 맛집</span>
+                </div>
+                <div class="card">
+                    <h3>🥂 합정 크래프트</h3>
+                    <div class="price">8,500<span>원 / 500ml</span></div>
+                    <p class="detail">생맥주 가격: 8,500원 (500ml)</p>
+                    <p class="detail">대표 안주: 타코 16,000원</p>
+                    <p class="detail">분위기: 힙한 감성, 야외 테라스</p>
+                    <span class="badge">프리미엄 라인</span>
+                </div>
+            </div>
+
+            <h2>내가 직접 비교해본 합정 펍 3곳</h2>
+            <p>사실 처음엔 "아무 데나 가면 되지" 하고 생각했어. 근데 막상 가보니까 완전 다르더라. 브루잉팩토리는 가격이 착해서 부담 없이 여러 잔 마시기 좋고, 더 펍은 분위기가 진짜 클래식해서 데이트하기 딱이야. 합정 크래프트는 약간 비싸지만, 거기서 파는 수제 맥주가 진짜 예술이야. 내 입맛엔 세 군데 다 장단점이 있었어. 아래 표로 싹 정리했으니까 한눈에 비교해봐.</p>
+
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>항목</th>
+                        <th>브루잉팩토
+</body>
+</html>

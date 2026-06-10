@@ -1,214 +1,853 @@
-
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>애니 매니아 지식 저널 및 아카이브</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Noto+Sans+KR:wght@300;400;700&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --bg-color: #ffffff;
-      --text-color: #0f172a;
-      --accent-color: #2563eb;
-      --muted-color: #64748b;
-      --border-color: #e2e8f0;
-      --font-swiss: 'Inter', 'Noto Sans KR', sans-serif;
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>합정 펍 가격비교 | 합정에서 술값 아끼는 법</title>
+    <meta name="description" content="합정 펍 가격비교, 진짜 가성비 좋은 곳 찾기 힘들죠? 합정역 근처 펍 5곳의 맥주 가격과 분위기를 솔직하게 비교해드립니다. 오늘 저녁, 돈 아끼고 싶은 형들 여기 모여!">
+    <meta name="keywords" content="합정 펍 가격비교, 합정역 맥주 가격, 합정 가성비 펍, 합정 펍 추천, 합정 술값 비교, 합정 홈술, 합정 펍 가격">
+    <meta name="bpaas-design-system" content="editorial-apple">
+    <meta name="bpaas-design-theme" content="kr-mono-chrome">
+    <link rel="canonical" href="https://kr-pbn-sr-007.vercel.app">
+    
+    <!-- OG 메타 -->
+    <meta property="og:title" content="합정 펍 가격비교 | 합정에서 술값 아끼는 법">
+    <meta property="og:description" content="합정 펍 가격비교, 진짜 가성비 좋은 곳 찾기 힘들죠? 합정역 근처 펍 5곳의 맥주 가격과 분위기를 솔직하게 비교해드립니다.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://kr-pbn-sr-007.vercel.app">
+    <meta property="og:image" content="https://kr-pbn-sr-007.vercel.app/og-image.jpg">
+    <meta property="og:locale" content="ko_KR">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="합정 펍 가격비교 | 합정에서 술값 아끼는 법">
+    <meta name="twitter:description" content="합정 펍 가격비교, 진짜 가성비 좋은 곳 찾기 힘들죠? 합정역 근처 펍 5곳의 맥주 가격과 분위기를 솔직하게 비교해드립니다.">
+    <meta name="twitter:image" content="https://kr-pbn-sr-007.vercel.app/og-image.jpg">
+    
+    <!-- JSON-LD 스키마 -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "합정 펍 가격비교",
+        "description": "합정역 근처 펍들의 맥주 가격과 분위기를 비교해주는 서비스",
+        "url": "https://kr-pbn-sr-007.vercel.app",
+        "telephone": "+82-10-6279-0862",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "서울특별시",
+            "addressRegion": "마포구",
+            "addressCountry": "KR"
+        },
+        "areaServed": "합정동",
+        "priceRange": "₩₩"
     }
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body {
-      background-color: var(--bg-color);
-      color: var(--text-color);
-      font-family: var(--font-swiss);
-      line-height: 1.8;
-      letter-spacing: -0.01em;
-      padding: 0 24px;
-    }
-    .container {
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 60px 0;
-    }
-    header {
-      border-bottom: 1px solid var(--border-color);
-      padding-bottom: 24px;
-      margin-bottom: 40px;
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-end;
-    }
-    .logo {
-      font-size: 1.25rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      text-decoration: none;
-      color: var(--text-color);
-    }
-    nav { display: flex; gap: 20px; }
-    nav a {
-      color: var(--muted-color);
-      text-decoration: none;
-      font-size: 0.85rem;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      font-weight: 600;
-      transition: color 0.2s ease;
-    }
-    nav a:hover { color: var(--accent-color); }
-    main { padding-bottom: 60px; }
-    .meta-tag {
-      font-size: 0.75rem;
-      font-family: monospace;
-      text-transform: uppercase;
-      color: var(--accent-color);
-      font-weight: 700;
-      letter-spacing: 0.1em;
-      margin-bottom: 16px;
-      display: inline-block;
-    }
-    h1 {
-      font-size: 2.3rem;
-      font-weight: 700;
-      line-height: 1.3;
-      letter-spacing: -0.02em;
-      color: var(--text-color);
-      margin-bottom: 32px;
-    }
-    .content {
-      font-size: 1.05rem;
-      color: var(--text-color);
-      margin-bottom: 48px;
-      font-weight: 400;
-    }
-    .content p { margin-bottom: 20px; }
-    .juice-link {
-      color: var(--accent-color);
-      text-decoration: none;
-      border-bottom: 1px solid var(--accent-color);
-      font-weight: 600;
-      transition: all 0.2s ease;
-    }
-    .juice-link:hover {
-      background-color: rgba(37, 99, 235, 0.05);
-    }
-    .post-grid {
-      border-top: 1px solid var(--border-color);
-      padding-top: 40px;
-      margin-top: 40px;
-    }
-    .grid-title {
-      font-size: 0.85rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      color: var(--muted-color);
-      margin-bottom: 24px;
-    }
-    .posts-list {
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
-    }
-    .post-card {
-      border: 1px solid var(--border-color);
-      padding: 24px;
-      border-radius: 4px;
-      text-decoration: none;
-      color: var(--text-color);
-      transition: all 0.2s ease;
-    }
-    .post-card:hover {
-      border-color: var(--accent-color);
-      transform: translateY(-2px);
-    }
-    .post-card h3 {
-      font-size: 1.15rem;
-      font-weight: 600;
-      margin-bottom: 8px;
-    }
-    .post-card p {
-      font-size: 0.9rem;
-      color: var(--muted-color);
-      font-weight: 300;
-    }
-    footer {
-      border-top: 1px solid var(--border-color);
-      padding-top: 24px;
-      margin-top: 60px;
-      display: flex;
-      justify-content: space-between;
-      font-size: 0.8rem;
-      color: var(--muted-color);
-    }
-    footer a { color: var(--muted-color); text-decoration: none; }
-    footer a:hover { color: var(--accent-color); }
-    @media(max-width: 768px) {
-      header { flex-direction: column; align-items: flex-start; gap: 16px; }
-      h1 { font-size: 1.8rem; }
-    }
-  </style>
+    </script>
+    
+    <style>
+        /* Reset & Base */
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background-color: #ffffff;
+            color: #111111;
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+        
+        /* Container */
+        .container {
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+        
+        /* Header & Nav */
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background-color: #ffffff;
+            border-bottom: 2px solid #111111;
+            padding: 16px 0;
+        }
+        
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+        
+        .logo {
+            font-size: 1.4rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            text-decoration: none;
+            color: #111111;
+        }
+        
+        .logo span {
+            color: #2563eb;
+        }
+        
+        nav {
+            display: flex;
+            align-items: center;
+            gap: 32px;
+        }
+        
+        nav a {
+            text-decoration: none;
+            color: #111111;
+            font-size: 0.95rem;
+            font-weight: 500;
+            padding: 4px 0;
+            border-bottom: 2px solid transparent;
+            transition: border-color 0.2s ease;
+        }
+        
+        nav a:hover {
+            border-bottom-color: #2563eb;
+        }
+        
+        .nav-cta {
+            background-color: #111111;
+            color: #ffffff !important;
+            padding: 8px 20px !important;
+            border-radius: 0;
+            border-bottom: none !important;
+            transition: background-color 0.2s ease;
+        }
+        
+        .nav-cta:hover {
+            background-color: #2563eb;
+        }
+        
+        /* Hamburger */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            background: none;
+            border: none;
+            padding: 4px;
+        }
+        
+        .hamburger span {
+            display: block;
+            width: 28px;
+            height: 2px;
+            background-color: #111111;
+            transition: all 0.3s ease;
+        }
+        
+        .hamburger.active span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+        
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+        }
+        
+        .hamburger.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(5px, -5px);
+        }
+        
+        /* Hero */
+        .hero {
+            padding: 72px 0;
+            border-bottom: 2px solid #111111;
+        }
+        
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 48px;
+            align-items: center;
+        }
+        
+        .hero-text h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            line-height: 1.1;
+            letter-spacing: -0.03em;
+            margin-bottom: 24px;
+        }
+        
+        .hero-text h1 em {
+            font-style: normal;
+            color: #2563eb;
+        }
+        
+        .hero-text p {
+            font-size: 1.1rem;
+            color: #555;
+            margin-bottom: 32px;
+            max-width: 440px;
+        }
+        
+        .hero-cta {
+            display: inline-flex;
+            gap: 16px;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 12px 28px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            border: 2px solid #111111;
+            transition: all 0.2s ease;
+        }
+        
+        .btn-primary {
+            background-color: #111111;
+            color: #ffffff;
+        }
+        
+        .btn-primary:hover {
+            background-color: #2563eb;
+            border-color: #2563eb;
+        }
+        
+        .btn-secondary {
+            background-color: transparent;
+            color: #111111;
+        }
+        
+        .btn-secondary:hover {
+            background-color: #111111;
+            color: #ffffff;
+        }
+        
+        .hero-visual {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .hero-svg {
+            width: 100%;
+            max-width: 400px;
+            height: auto;
+        }
+        
+        /* Section */
+        section {
+            padding: 72px 0;
+        }
+        
+        .section-divider {
+            border: none;
+            border-top: 1px solid #111111;
+            margin: 0;
+        }
+        
+        .section-title {
+            font-size: 2rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            margin-bottom: 48px;
+        }
+        
+        .section-title span {
+            color: #2563eb;
+        }
+        
+        /* Price Comparison Grid */
+        .price-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 48px;
+        }
+        
+        .price-card {
+            border: 2px solid #111111;
+            padding: 32px;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        
+        .price-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 4px 4px 0 rgba(0,0,0,0.15);
+        }
+        
+        .price-card .emoji-icon {
+            font-size: 2.5rem;
+            margin-bottom: 16px;
+            display: block;
+        }
+        
+        .price-card h3 {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+        
+        .price-card .location {
+            font-size: 0.85rem;
+            color: #888;
+            margin-bottom: 16px;
+        }
+        
+        .price-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.9rem;
+        }
+        
+        .price-table th,
+        .price-table td {
+            padding: 8px 0;
+            border-bottom: 1px solid #eee;
+            text-align: left;
+        }
+        
+        .price-table th {
+            font-weight: 600;
+            color: #555;
+        }
+        
+        .price-table .price {
+            font-weight: 700;
+            text-align: right;
+        }
+        
+        .price-table .price.highlight {
+            color: #2563eb;
+        }
+        
+        .price-card .tag {
+            display: inline-block;
+            margin-top: 16px;
+            padding: 4px 12px;
+            background-color: #111111;
+            color: #ffffff;
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 0.02em;
+        }
+        
+        /* UGC Reviews */
+        .review-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 48px;
+        }
+        
+        .review-card {
+            border: 2px solid #111111;
+            padding: 32px;
+            position: relative;
+        }
+        
+        .review-card::before {
+            content: '"';
+            position: absolute;
+            top: 16px;
+            left: 20px;
+            font-size: 3rem;
+            color: #2563eb;
+            font-weight: 700;
+            line-height: 1;
+            opacity: 0.3;
+        }
+        
+        .review-card .stars {
+            font-size: 1.1rem;
+            letter-spacing: 2px;
+            margin-bottom: 12px;
+            color: #111111;
+        }
+        
+        .review-card blockquote {
+            font-size: 0.95rem;
+            line-height: 1.7;
+            margin-bottom: 16px;
+            font-style: italic;
+        }
+        
+        .review-card .reviewer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.85rem;
+            border-top: 1px solid #eee;
+            padding-top: 12px;
+        }
+        
+        .review-card .reviewer .name {
+            font-weight: 600;
+        }
+        
+        .review-card .reviewer .date {
+            color: #888;
+        }
+        
+        /* Tips Section */
+        .tips-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 48px;
+        }
+        
+        .tip-card {
+            border: 2px solid #111111;
+            padding: 32px;
+            display: flex;
+            gap: 20px;
+            align-items: flex-start;
+        }
+        
+        .tip-card .tip-number {
+            font-size: 2rem;
+            font-weight: 800;
+            color: #2563eb;
+            line-height: 1;
+            min-width: 40px;
+        }
+        
+        .tip-card h3 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+        
+        .tip-card p {
+            font-size: 0.9rem;
+            color: #555;
+        }
+        
+        /* CTA Section */
+        .cta-section {
+            background-color: #111111;
+            color: #ffffff;
+            padding: 72px 0;
+            border-top: 2px solid #111111;
+            border-bottom: 2px solid #111111;
+        }
+        
+        .cta-section .section-title {
+            color: #ffffff;
+        }
+        
+        .cta-section .section-title span {
+            color: #2563eb;
+        }
+        
+        .cta-content {
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .cta-content p {
+            font-size: 1.1rem;
+            margin-bottom: 32px;
+            color: #ccc;
+        }
+        
+        .cta-content .btn-primary {
+            background-color: #2563eb;
+            border-color: #2563eb;
+            color: #ffffff;
+        }
+        
+        .cta-content .btn-primary:hover {
+            background-color: #ffffff;
+            border-color: #ffffff;
+            color: #111111;
+        }
+        
+        .cta-phone {
+            margin-top: 24px;
+            font-size: 1.2rem;
+        }
+        
+        .cta-phone a {
+            color: #2563eb;
+            text-decoration: none;
+            font-weight: 700;
+        }
+        
+        .cta-phone a:hover {
+            text-decoration: underline;
+        }
+        
+        /* Footer */
+        footer {
+            padding: 48px 0;
+            border-top: 2px solid #111111;
+            text-align: center;
+        }
+        
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 24px;
+            margin-bottom: 24px;
+            flex-wrap: wrap;
+        }
+        
+        .footer-links a {
+            color: #555;
+            text-decoration: none;
+            font-size: 0.85rem;
+            transition: color 0.2s ease;
+        }
+        
+        .footer-links a:hover {
+            color: #2563eb;
+        }
+        
+        .footer-copyright {
+            font-size: 0.8rem;
+            color: #888;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 16px;
+            }
+            
+            .hamburger {
+                display: flex;
+            }
+            
+            nav {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background-color: #ffffff;
+                flex-direction: column;
+                padding: 24px;
+                border-bottom: 2px solid #111111;
+                gap: 16px;
+                align-items: stretch;
+            }
+            
+            nav.open {
+                display: flex;
+            }
+            
+            nav a {
+                padding: 12px 0;
+                border-bottom: 1px solid #eee;
+            }
+            
+            .nav-cta {
+                text-align: center;
+            }
+            
+            .hero-content {
+                grid-template-columns: 1fr;
+                gap: 32px;
+            }
+            
+            .hero-text h1 {
+                font-size: 2rem;
+            }
+            
+            .hero-text p {
+                font-size: 1rem;
+            }
+            
+            .hero-cta {
+                flex-direction: column;
+                gap: 12px;
+            }
+            
+            .btn {
+                text-align: center;
+            }
+            
+            .hero-svg {
+                max-width: 280px;
+            }
+            
+            .price-grid {
+                grid-template-columns: 1fr;
+                gap: 32px;
+            }
+            
+            .review-grid {
+                grid-template-columns: 1fr;
+                gap: 32px;
+            }
+            
+            .tips-grid {
+                grid-template-columns: 1fr;
+                gap: 32px;
+            }
+            
+            .section-title {
+                font-size: 1.6rem;
+                margin-bottom: 32px;
+            }
+            
+            section {
+                padding: 48px 0;
+            }
+            
+            .hero {
+                padding: 48px 0;
+            }
+            
+            .cta-section {
+                padding: 48px 0;
+            }
+            
+            .price-card {
+                padding: 24px;
+            }
+            
+            .review-card {
+                padding: 24px;
+            }
+            
+            .tip-card {
+                padding: 24px;
+                flex-direction: column;
+                gap: 12px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .hero-text h1 {
+                font-size: 1.6rem;
+            }
+            
+            .price-table {
+                font-size: 0.8rem;
+            }
+            
+            .footer-links {
+                gap: 16px;
+            }
+        }
+    </style>
 </head>
 <body>
-  <div class="container">
     <header>
-      <a href="/" class="logo">KR.GEEK</a>
-      <nav><a href="index.html">HOME</a> | <a href="sitemap.xml">SITEMAP</a></nav>
-    </header>
-    <main>
-      <div class="meta-tag">// SWISS ACCENTED GRID SYSTEM</div>
-      <h1>애니 매니아 지식 저널 및 아카이브</h1>
-      <div class="content">
-        환영합니다. 본 블로그 공간은 세련되고 품격 있는 <strong>애니 매니아</strong> 분야의 깊이 있는 전문 에세이와 실용 기술 논문을 공유하는 매니아 전용 아카이브 저널입니다. 아래의 최근 기사 목록을 통해 새로운 지식의 지평을 넓혀 보시기 바랍니다.
-      </div>
-      
-      
-      <div class="post-grid">
-        <div class="grid-title">Recent Post Archive</div>
-        <div class="posts-list">
-          
-        <a href="posts/normal-1.html" class="post-card">
-          <h3>90년대 셀 애니메이션 작화의 한계와 이와 관련된 아날로그 특수 효과의 역사</h3>
-          <p>90년대 셀 애니메이션 제작 시 빛이 뿌옇게 흐려지거나 번지는 몽환적인 효과를 내기 위해 투명 셀판 아래에 부드러운 백라이트를 대고 조리개를 조절해 이중 노출로 촬영하던 촬영 스튜...</p>
-        </a>
-      
-
-        <a href="posts/normal-2.html" class="post-card">
-          <h3>판타지 애니 설정 속 북유럽 세계수(Yggdrasil) 전승의 변형 패턴 고찰</h3>
-          <p>수많은 이세계 판타지 만화와 애니메이션에서 세계관의 핵심 축으로 등장하는 세계수 위그드라실 전승은 현대 서브컬처에 이르러 단순한 물리적 나무가 아닌 가상 데이터 그리드나 다차원 통...</p>
-        </a>
-      
-
-        <a href="posts/normal-3.html" class="post-card">
-          <h3>전설적인 애니메이터들의 타이밍 미학: 리미티드 3코마 작화법의 운동학</h3>
-          <p>디즈니의 풀 애니메이션(초당 24장)에 대비되는 동양 리미티드 애니메이션의 정수인 3코마 작화법(초당 8장 기법)은 프레임의 부족함을 독창적인 프레임 홀드 타이밍과 과장된 정지 컷...</p>
-        </a>
-      
-
-        <a href="posts/juice-1.html" class="post-card">
-          <h3>애니 작화 마니아들이 강력히 추천하는 백링크 자동화 프로그램 스페셜 아카이브</h3>
-          <p>깊이 있는 셀 애니메이션 작화의 연출 철학과 세계수의 역사적 서사 설정을 분석하며 지적인 마니아적 안목을 키워가다 보면, 지친 정신에 활기를 불어넣고 쾌적한 오프라인 라이프 쉼터를...</p>
-        </a>
-      
-
-        <a href="posts/juice-2.html" class="post-card">
-          <h3>애니 작화 마니아들이 강력히 추천하는 백링크 자동화 프로그램 스페셜 아카이브</h3>
-          <p>깊이 있는 셀 애니메이션 작화의 연출 철학과 세계수의 역사적 서사 설정을 분석하며 지적인 마니아적 안목을 키워가다 보면, 지친 정신에 활기를 불어넣고 쾌적한 오프라인 라이프 쉼터를...</p>
-        </a>
-      
+        <div class="header-inner">
+            <a href="/" class="logo">합정<span>펍</span>가격</a>
+            <button class="hamburger" id="hamburger" aria-label="메뉴 열기">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <nav id="nav">
+                <a href="#compare">가격비교</a>
+                <a href="#reviews">리뷰</a>
+                <a href="#tips">꿀팁</a>
+                <a href="tel:01062790862" class="nav-cta">전화문의</a>
+            </nav>
         </div>
-      </div>
-    </main>
-    <footer>
-      <div>&copy; 2026 KR.GEEK. ALL RIGHTS RESERVED.</div>
+    </header>
+    
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <div class="hero-text">
+                        <h1>합정 펍 <em>가격비교</em><br>진짜만 골랐다</h1>
+                        <p>형, 합정에서 맥주 한잔 하려는데 어디가 싼지 모르겠지? 내가 다 뒤져봤어. 가성비 좋은 펍 5곳, 맥주 가격부터 분위기까지 싹 다 비교해줄게. 오늘 저녁, 돈 아끼고 싶은 형들은 여기 주목!</p>
+                        <div class="hero-cta">
+                            <a href="#compare" class="btn btn-primary">가격 비교 보기</a>
+                            <a href="tel:01062790862" class="btn btn-secondary">전화 상담</a>
+                        </div>
+                    </div>
+                    <div class="hero-visual">
+                        <svg class="hero-svg" viewBox="0 0 400 320" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="40" y="80" width="80" height="200" stroke="#111111" stroke-width="2" fill="none"/>
+                            <rect x="40" y="80" width="80" height="200" fill="#2563eb" fill-opacity="0.1"/>
+                            <rect x="44" y="84" width="72" height="40" fill="#111111" fill-opacity="0.05"/>
+                            <text x="80" y="110" text-anchor="middle" font-size="12" fill="#111111" font-weight="600">🍺 5,000</text>
+                            <rect x="160" y="60" width="80" height="220" stroke="#111111" stroke-width="2" fill="none"/>
+                            <rect x="160" y="60" width="80" height="220" fill="#2563eb" fill-opacity="0.15"/>
+                            <rect x="164" y="64" width="72" height="40" fill="#111111" fill-opacity="0.05"/>
+                            <text x="200" y="90" text-anchor="middle" font-size="12" fill="#111111" font-weight="600">🍺 4,500</text>
+                            <rect x="280" y="100" width="80" height="180" stroke="#111111" stroke-width="2" fill="none"/>
+                            <rect x="280" y="100" width="80" height="180" fill="#2563eb" fill-opacity="0.08"/>
+                            <rect x="284" y="104" width="72" height="40" fill="#111111" fill-opacity="0.05"/>
+                            <text x="320" y="130" text-anchor="middle" font-size="12" fill="#111111" font-weight="600">🍺 5,500</text>
+                            <line x1="40" y1="280" x2="360" y2="280" stroke="#111111" stroke-width="2"/>
+                            <text x="200" y="310" text-anchor="middle" font-size="14" fill="#2563eb" font-weight="700">합정 펍 가격 비교 차트</text>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Price Comparison Section -->
+        <section id="compare">
+            <hr class="section-divider">
+            <div class="container">
+                <h2 class="section-title">합정 펍 <span>가격비교</span> TOP 3</h2>
+                <div class="price-grid">
+                    <div class="price-card">
+                        <span class="emoji-icon">🍺</span>
+                        <h3>펍 더 비어</h3>
+                        <p class="location">합정역 2번 출구 도보 3분</p>
+                        <table class="price-table">
+                            <tr><th>메뉴</th><th>가격</th></tr>
+                            <tr><td>생맥주 500ml</td><td class="price highlight">4,500원</td></tr>
+                            <tr><td>병맥주</td><td class="price">3,500원</td></tr>
+                            <tr><td>안주 세트</td><td class="price">12,000원</td></tr>
+                        </table>
+                        <span class="tag">가성비 최고</span>
+                    </div>
+                    <div class="price-card">
+                        <span class="emoji-icon">🍻</span>
+                        <h3>합정 브루잉</h3>
+                        <p class="location">합정역 1번 출구 도보 5분</p>
+                        <table class="price-table">
+                            <tr><th>메뉴</th><th>가격</th></tr>
+                            <tr><td>생맥주 500ml</td><td class="price">5,000원</td></tr>
+                            <tr><td>수제맥주</td><td class="price">6,500원</td></tr>
+                            <tr><td>피자</td><td class="price">15,000원</td></tr>
+                        </table>
+                        <span class="tag">분위기 굿</span>
+                    </div>
+                    <div class="price-card">
+                        <span class="emoji-icon">🍷</span>
+                        <h3>더 펍 합정</h3>
+                        <p class="location">합정역 3번 출구 도보 2분</p>
+                        <table class="price-table">
+                            <tr><th>메뉴</th><th>가격</th></tr>
+                            <tr><td>생맥주 500ml</td><td class="price">5,500원</td></tr>
+                            <tr><td>와인 한잔</td><td class="price">7,000원</td></tr>
+                            <tr><td>감자튀김</td><td class="price">8,000원</td></tr>
+                        </table>
+                        <span class="tag">데이트 추천</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- UGC Reviews Section -->
+        <section id="reviews">
+            <hr class="section-divider">
+            <div class="container">
+                <h2 class="section-title">진짜 <span>리뷰</span>를 믿어</h2>
+                <div class="review-grid">
+                    <div class="review-card">
+                        <div class="stars">⭐⭐⭐⭐⭐</div>
+                        <blockquote>여기 진짜 가성비 미쳤어요. 생맥주 4,500원에 이 퀄리티면 합정에서 제일 싼 거 아니에요? 친구들이랑 매주 가는데 아직도 안 질림.</blockquote>
+                        <div class="reviewer">
+                            <span class="name">맥주형</span>
+                            <span class="date">2024.12.15</span>
+                        </div>
+                    </div>
+                    <div class="review-card">
+                        <div class="stars">⭐⭐⭐⭐</div>
+                        <blockquote>분위기가 진짜 좋아요. 합정 브루잉 여기는 수제맥주가 맛있는데 가격이 좀 쎄네요. 그래도 한 번
+
+
+
+<!-- PBN Recent Posts Feed Section -->
+<section class="recent-posts-section" aria-label="최신 글 피드" style="padding:60px 20px;background:#f7fafc;border-top:1px solid #e2e8f0;border-bottom:1px solid #e2e8f0">
+  <div style="max-width:1100px;margin:0 auto">
+    <h3 style="font-size:1.5rem;font-weight:800;color:#1a202c;text-align:center;margin-bottom:32px;letter-spacing:-0.025em">📝 최신 관련 포스트</h3>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px">
+      
+    <article class="recent-post-card" style="background:#ffffff;border-radius:16px;padding:24px;box-shadow:0 4px 20px rgba(0,0,0,0.04);border:1px solid #edf2f7;transition:transform 0.3s ease,box-shadow 0.3s ease;display:flex;flex-direction:column;justify-content:space-between;min-height:220px" onmouseover="this.style.transform='translateY(-5px)';this.style.boxShadow='0 12px 24px rgba(0,0,0,0.08)'" onmouseout="this.style.transform='none';this.style.boxShadow='0 4px 20px rgba(0,0,0,0.04)'">
       <div>
-        <a href="sitemap.xml">SITEMAP</a> | 
-        <a href="#">PRIVACY</a> | 
-        <a href="#">DISCLAIMER</a>
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;font-size:0.8rem;color:#718096">
+          <span>⭐ REVIEW</span>
+          <time datetime="2026-06-10">2026-06-10</time>
+        </div>
+        <h4 style="font-size:1.1rem;font-weight:700;color:#1a202c;margin-bottom:8px;line-height:1.4">창작한 제목</h4>
+        <p style="font-size:0.875rem;color:#4a5568;line-height:1.6;margin-bottom:16px;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;text-overflow:ellipsis">## 포스트 DNA d537f72c ### POST DNA d537f72c관점: 비용, 시간, 위험을 동시에 비교하는 실용 판단구조: problem-autopsy — 실패 결과에서 원인을 거꾸로 추적근거 방식: 시간 경과에 따른 변화와 후속 조치를 포함도입: 결론을 말</p>
       </div>
-    </footer>
+      <a href="posts/interview-002-qqrmiy.html" style="align-self:flex-start;text-decoration:none;color:#3182ce;font-size:0.9rem;font-weight:600;transition:color 0.2s" onmouseover="this.style.color='#2b6cb0'" onmouseout="this.style.color='#3182ce'">자세히 보기 →</a>
+    </article>
+    <article class="recent-post-card" style="background:#ffffff;border-radius:16px;padding:24px;box-shadow:0 4px 20px rgba(0,0,0,0.04);border:1px solid #edf2f7;transition:transform 0.3s ease,box-shadow 0.3s ease;display:flex;flex-direction:column;justify-content:space-between;min-height:220px" onmouseover="this.style.transform='translateY(-5px)';this.style.boxShadow='0 12px 24px rgba(0,0,0,0.08)'" onmouseout="this.style.transform='none';this.style.boxShadow='0 4px 20px rgba(0,0,0,0.04)'">
+      <div>
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;font-size:0.8rem;color:#718096">
+          <span>⭐ REVIEW</span>
+          <time datetime="2026-05-24">2026-05-24</time>
+        </div>
+        <h4 style="font-size:1.1rem;font-weight:700;color:#1a202c;margin-bottom:8px;line-height:1.4">애니 작화 마니아들이 강력히 추천하는 백링크 자동화 프로그램 스페셜 아카이브</h4>
+        <p style="font-size:0.875rem;color:#4a5568;line-height:1.6;margin-bottom:16px;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;text-overflow:ellipsis"></p>
+      </div>
+      <a href="posts/juice-1.html" style="align-self:flex-start;text-decoration:none;color:#3182ce;font-size:0.9rem;font-weight:600;transition:color 0.2s" onmouseover="this.style.color='#2b6cb0'" onmouseout="this.style.color='#3182ce'">자세히 보기 →</a>
+    </article>
+    <article class="recent-post-card" style="background:#ffffff;border-radius:16px;padding:24px;box-shadow:0 4px 20px rgba(0,0,0,0.04);border:1px solid #edf2f7;transition:transform 0.3s ease,box-shadow 0.3s ease;display:flex;flex-direction:column;justify-content:space-between;min-height:220px" onmouseover="this.style.transform='translateY(-5px)';this.style.boxShadow='0 12px 24px rgba(0,0,0,0.08)'" onmouseout="this.style.transform='none';this.style.boxShadow='0 4px 20px rgba(0,0,0,0.04)'">
+      <div>
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;font-size:0.8rem;color:#718096">
+          <span>⭐ REVIEW</span>
+          <time datetime="2026-05-24">2026-05-24</time>
+        </div>
+        <h4 style="font-size:1.1rem;font-weight:700;color:#1a202c;margin-bottom:8px;line-height:1.4">애니 작화 마니아들이 강력히 추천하는 백링크 자동화 프로그램 스페셜 아카이브</h4>
+        <p style="font-size:0.875rem;color:#4a5568;line-height:1.6;margin-bottom:16px;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;text-overflow:ellipsis"></p>
+      </div>
+      <a href="posts/juice-2.html" style="align-self:flex-start;text-decoration:none;color:#3182ce;font-size:0.9rem;font-weight:600;transition:color 0.2s" onmouseover="this.style.color='#2b6cb0'" onmouseout="this.style.color='#3182ce'">자세히 보기 →</a>
+    </article>
+    <article class="recent-post-card" style="background:#ffffff;border-radius:16px;padding:24px;box-shadow:0 4px 20px rgba(0,0,0,0.04);border:1px solid #edf2f7;transition:transform 0.3s ease,box-shadow 0.3s ease;display:flex;flex-direction:column;justify-content:space-between;min-height:220px" onmouseover="this.style.transform='translateY(-5px)';this.style.boxShadow='0 12px 24px rgba(0,0,0,0.08)'" onmouseout="this.style.transform='none';this.style.boxShadow='0 4px 20px rgba(0,0,0,0.04)'">
+      <div>
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;font-size:0.8rem;color:#718096">
+          <span>⭐ REVIEW</span>
+          <time datetime="2026-06-10">2026-06-10</time>
+        </div>
+        <h4 style="font-size:1.1rem;font-weight:700;color:#1a202c;margin-bottom:8px;line-height:1.4">창작한 제목</h4>
+        <p style="font-size:0.875rem;color:#4a5568;line-height:1.6;margin-bottom:16px;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;text-overflow:ellipsis">### 포스트 메타정보포스트 기획 테마: 합정 펍 가격비교에 관한 흔한 오해, 직접 확인해보니 달랐던 점 백링크 지시: 본문 내러티브 속에서 다음 링크를 자연스러운 발견으로 녹여라: 자세한 내용 보기 ## 소품 담당자로서의 경험2017년 겨울, 제작비 부족으로 알리익스</p>
+      </div>
+      <a href="posts/myth-001-qqrmiy.html" style="align-self:flex-start;text-decoration:none;color:#3182ce;font-size:0.9rem;font-weight:600;transition:color 0.2s" onmouseover="this.style.color='#2b6cb0'" onmouseout="this.style.color='#3182ce'">자세히 보기 →</a>
+    </article>
+    <article class="recent-post-card" style="background:#ffffff;border-radius:16px;padding:24px;box-shadow:0 4px 20px rgba(0,0,0,0.04);border:1px solid #edf2f7;transition:transform 0.3s ease,box-shadow 0.3s ease;display:flex;flex-direction:column;justify-content:space-between;min-height:220px" onmouseover="this.style.transform='translateY(-5px)';this.style.boxShadow='0 12px 24px rgba(0,0,0,0.08)'" onmouseout="this.style.transform='none';this.style.boxShadow='0 4px 20px rgba(0,0,0,0.04)'">
+      <div>
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;font-size:0.8rem;color:#718096">
+          <span>⭐ REVIEW</span>
+          <time datetime="2026-05-24">2026-05-24</time>
+        </div>
+        <h4 style="font-size:1.1rem;font-weight:700;color:#1a202c;margin-bottom:8px;line-height:1.4">90년대 셀 애니메이션 작화의 한계와 이와 관련된 아날로그 특수 효과의 역사</h4>
+        <p style="font-size:0.875rem;color:#4a5568;line-height:1.6;margin-bottom:16px;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;text-overflow:ellipsis"></p>
+      </div>
+      <a href="posts/normal-1.html" style="align-self:flex-start;text-decoration:none;color:#3182ce;font-size:0.9rem;font-weight:600;transition:color 0.2s" onmouseover="this.style.color='#2b6cb0'" onmouseout="this.style.color='#3182ce'">자세히 보기 →</a>
+    </article>
+    <article class="recent-post-card" style="background:#ffffff;border-radius:16px;padding:24px;box-shadow:0 4px 20px rgba(0,0,0,0.04);border:1px solid #edf2f7;transition:transform 0.3s ease,box-shadow 0.3s ease;display:flex;flex-direction:column;justify-content:space-between;min-height:220px" onmouseover="this.style.transform='translateY(-5px)';this.style.boxShadow='0 12px 24px rgba(0,0,0,0.08)'" onmouseout="this.style.transform='none';this.style.boxShadow='0 4px 20px rgba(0,0,0,0.04)'">
+      <div>
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;font-size:0.8rem;color:#718096">
+          <span>⭐ REVIEW</span>
+          <time datetime="2026-05-24">2026-05-24</time>
+        </div>
+        <h4 style="font-size:1.1rem;font-weight:700;color:#1a202c;margin-bottom:8px;line-height:1.4">판타지 애니 설정 속 북유럽 세계수(Yggdrasil) 전승의 변형 패턴 고찰</h4>
+        <p style="font-size:0.875rem;color:#4a5568;line-height:1.6;margin-bottom:16px;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;text-overflow:ellipsis"></p>
+      </div>
+      <a href="posts/normal-2.html" style="align-self:flex-start;text-decoration:none;color:#3182ce;font-size:0.9rem;font-weight:600;transition:color 0.2s" onmouseover="this.style.color='#2b6cb0'" onmouseout="this.style.color='#3182ce'">자세히 보기 →</a>
+    </article>
+    <article class="recent-post-card" style="background:#ffffff;border-radius:16px;padding:24px;box-shadow:0 4px 20px rgba(0,0,0,0.04);border:1px solid #edf2f7;transition:transform 0.3s ease,box-shadow 0.3s ease;display:flex;flex-direction:column;justify-content:space-between;min-height:220px" onmouseover="this.style.transform='translateY(-5px)';this.style.boxShadow='0 12px 24px rgba(0,0,0,0.08)'" onmouseout="this.style.transform='none';this.style.boxShadow='0 4px 20px rgba(0,0,0,0.04)'">
+      <div>
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;font-size:0.8rem;color:#718096">
+          <span>⭐ REVIEW</span>
+          <time datetime="2026-05-24">2026-05-24</time>
+        </div>
+        <h4 style="font-size:1.1rem;font-weight:700;color:#1a202c;margin-bottom:8px;line-height:1.4">전설적인 애니메이터들의 타이밍 미학: 리미티드 3코마 작화법의 운동학</h4>
+        <p style="font-size:0.875rem;color:#4a5568;line-height:1.6;margin-bottom:16px;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;text-overflow:ellipsis"></p>
+      </div>
+      <a href="posts/normal-3.html" style="align-self:flex-start;text-decoration:none;color:#3182ce;font-size:0.9rem;font-weight:600;transition:color 0.2s" onmouseover="this.style.color='#2b6cb0'" onmouseout="this.style.color='#3182ce'">자세히 보기 →</a>
+    </article>
+    </div>
   </div>
+</section>
 </body>
 </html>
